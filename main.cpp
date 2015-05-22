@@ -21,7 +21,8 @@ void stack::init(int n)
 	 for (int i = 0; i < n; i++)
 		 stck[i] = NULL;
 	 index = 0;
-}
+} 
+
 stack::~stack()
 {
 	free(stck);
@@ -42,27 +43,31 @@ void stack::del()
 	stck[index]=NULL;
 	index--;
 }
+
 void stack::print()
 {
 	for(index; index > 0; index--)
 	cout<<stck[index];
 }
 
-void main()
-{
+void main() {
 	stack s;
 	int n;
 	char DE[4]; 
-	char val; //значение
+	char val; // значение
     cout<<"KOldeistv:";
     cin>>n;
 	s.init(n);
 	for (int i = 0; i < n; i++)
 	{
-		cin>>DE>>val;
-		if (DE=="add") s.add(val, n);
+		cin >> DE;
+		if (DE=="add") {
+			cin >> val;
+			s.add(val, n);
+		}
 		if (DE=="del") s.del();
 	}
 	s.print();
 	system("pause>>void");
 }
+                                   
