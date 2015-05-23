@@ -11,7 +11,7 @@ class stack
 public:
 	  ~stack();
       void init(int n);     
-      void add(char ch, int n); 
+      void add(char ch); 
       void del();      
 	  void print();
 };
@@ -27,15 +27,11 @@ stack::~stack()
 {
 	free(stck);
 }
-void stack::add(char x, int n)
+void stack::add(char x)
 {
-	if (index < n)
-	{
 	    stck[index]=x;
 		index++;
 		cout<<stck[index];
-	}
-	else cout<<"FULL";
 }	
 
 void stack::del()
@@ -63,7 +59,7 @@ void main() {
 		cin >> DE;
 		if (DE=="add") {
 			cin >> val;
-			s.add(val, n);
+			s.add(val);
 		}
 		if (DE=="del") s.del();
 	}
